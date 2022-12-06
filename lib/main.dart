@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -9,108 +9,91 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('UTC'),
-          leading: Image.asset('img/logo.png'),
+          leading: Image.asset(
+            'img/logo.png',
+            width: 20,
+            height: 20,
+          ),
+          title: const Text('วิทยาลัยเทคนิคอุบลราชธานี'),
         ),
-        body: ListView(
-            // color: Colors.green,
+        body: ListView(children: [
+          const SizedBox(
+            height: 50,
+          ),
+          Column(
             children: [
-              Column(
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  Text(
-                    '1. Elit nisi officia aute sit ea. Nulla duis esse eu ut dolore nisi excepteur nisi voluptate aute consequat laborum tempor. Qui ex voluptate commodo Lorem quis ullamco. Velit occaecat esse exercitation duis anim ad commodo Lorem occaecat id pariatur excepteur Lorem. Nostrud pariatur commodo eu cupidatat proident enim ullamco dolor fugiat. Non qui anim magna id enim esse. Ipsum nisi sint proident ea minim mollit cillum.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 24, color: Colors.blue),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Text(
-                    "2. Aliqua occaecat in mollit nulla amet labore labore qui. Fugiat reprehenderit excepteur duis quis. Non cillum minim elit mollit in do mollit ullamco non. Incididunt magna eu consectetur pariatur ea. Minim culpa culpa amet ut ullamco quis labore culpa elit sit eiusmod duis sunt ut. Culpa laborum fugiat aliqua culpa esse occaecat incididunt cillum. Aute nostrud occaecat pariatur officia proident magna aliquip cillum elit.",
-                    textAlign: TextAlign.left,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: Colors.red),
-                  ),
-                  Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                   Text(
-                    "3. Lorem reprehenderit dolor dolor tempor voluptate cillum eu aute velit esse do pariatur. Consectetur dolor occaecat proident dolor est consectetur do sint sint excepteur excepteur. Veniam adipisicing Lorem deserunt fugiat.",
-                    textAlign: TextAlign.right,
-                    style: TextStyle(color: Colors.grey),
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.search,
-                        color: Colors.pink,
-                        size: 30,
-                      ),
-                      Text("ICONS"),
-                      ElevatedButton(
-                        onPressed: () => print("ON Click"),
-                        child: Text("Search"),
-                      )
-                    ],
-                  ),
-                  Image.asset(
-                    "img/logo.png",
-                    width: 50,
-                    height: 50,
-                  ),
-                  Image(
-                    image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAK_xxvay3vk0tgsxsQO1xr7X9i_SnCDbOIgWXgOPuq8McyNZwxMb4CJ5ZI0WioE1-Ew&usqp=CAU'),
-                    height: 100,
-                  )
-                ],
+              const Image(
+                image: NetworkImage(
+                    'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80'),
+                height: 300,
               ),
-            ]),
+              Container(
+                width: 450,
+                margin: const EdgeInsets.only(top: 20, bottom: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const <Widget>[
+                    Text(
+                      'รหัสนักศึกษา : 630000000',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      'ชื่อ - สกุล : Jonh nay',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                    Text(
+                      'แผนก : เทคโนโลยีคอมพิวเตอร์',
+                      style: TextStyle(fontSize: 30),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                width: 450,
+                child: Row(
+                  children: const <Widget>[
+                    Icon(
+                      Icons.home,
+                      color: Colors.pink,
+                      size: 50,
+                    ),
+                    Text(
+                      'อุบลราชธานี',
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: 450,
+                margin: const EdgeInsets.only(top: 30),
+                child: const Text(
+                  'Lorem anim consectetur eiusmod excepteur ut fugiat. Deserunt nostrud voluptate tempor culpa occaecat dolor aliqua deserunt sit aliquip. Proident consectetur mollit ea enim ipsum aliquip ex. Voluptate enim est aliqua magna occaecat occaecat. Lorem excepteur proident qui labore Lorem nulla non. Culpa culpa sit consectetur commodo mollit laboris dolor elit ex. Deserunt velit laboris pariatur tempor ullamco pariatur magna minim ea sit.',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              Container(
+                width: 450,
+                margin: const EdgeInsets.only(top: 40),
+                child: ElevatedButton(
+                  onPressed: () => print("ON Click"),
+                  child: const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      "บันทึก",
+                      style: TextStyle(fontSize: 30),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ]),
       ),
     );
   }
